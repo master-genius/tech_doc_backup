@@ -1,0 +1,8 @@
+linux环境,使用syslinux，mbr.bin，dd，fdisk，mkfs.msdos 制作启动盘：
+     挂在镜像：mount
+     格式化U盘为FAT格式,并设置启动分区：fdisk
+     可能需要更改镜像文件中的isolinux/ 目录为 syslinux/，其中的isolinux.cfg改为syslinux.cfg
+     syslinux安装引导程序
+     dd if=/usr/lib/syslinux/mbr.bin of=/dev/sd* ：写入主引导记录
+     mkfs.msdos创建文件系统并设置标签
+     把所有文件复制到U盘中，【不要忽略隐藏文件】
